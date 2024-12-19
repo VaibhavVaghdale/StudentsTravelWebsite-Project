@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Book Package</title>
+
+   <!-- Swiper CSS -->
+   <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+   <!-- Font Awesome Icons -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+   <!-- Custom Styles -->
+   <link rel="stylesheet" href="css/style.css">
+   <style>
+       /* Custom styles for checkbox alignment */
+       .inputBox label {
+           display: inline-block;
+           margin-left: 5px;
+           font-size: 14px;
+           cursor: pointer;
+       }
+
+       /* Hide elements initially */
+       .hidden {
+           display: none;
+       }
+   </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <section class="header">
+        <a href="home.html" class="logo">Students friendly Travel Website</a>
+        <nav class="navbar">
+            <a href="home.html">home</a>
+            <a href="about.html">about</a>
+            <a href="package.html">package</a>
+            <a href="book.html">book</a>
+            <a href="login.html">Login</a>
+        </nav>
+        <div id="menu-btn" class="fas fa-bars"></div>
+    </section>
+
+    <!-- Heading Section -->
+    <div class="heading" style="background:url(images/header-bg-3.png) no-repeat">
+        <h1>Book Now</h1>
+    </div>
+
+    <!-- Booking Form Section -->
+    <section class="booking">
+        <h1 class="heading-title">Book Your Trip!</h1>
+
+        <!-- Booking Form -->
+        <form id="booking-form" class="book-form">
+            <div class="flex">
+                <div class="inputBox">
+                    <span>Name:</span>
+                    <input type="text" placeholder="Enter your name" name="name" id="name" required>
+                    <div class="error-message" id="name-error"></div>
+                </div>
+                <div class="inputBox">
+                    <span>Email:</span>
+                    <input type="email" placeholder="Enter your email" name="email" id="email" required>
+                    <div class="error-message" id="email-error"></div>
+                </div>
+                <div class="inputBox">
+                    <span>Phone:</span>
+                    <input type="tel" placeholder="Enter your number" name="phone" id="phone" required pattern="^\d{10}$">
+                    <div class="error-message" id="phone-error"></div>
+                </div>
+                <div class="inputBox">
+                    <span>Address:</span>
+                    <input type="text" placeholder="Enter your address" name="address" id="address" required>
+                    <div class="error-message" id="address-error"></div>
+                </div>
+                <div class="inputBox">
+                    <span>Where to:</span>
+                    <input type="text" placeholder="Place you want to visit" name="location" id="location" required>
+                    <div class="error-message" id="location-error"></div>
+                </div>
+                <div class="inputBox">
+                    <span>How many:</span>
+                    <input type="number" placeholder="Number of guests" name="guests" id="guests" required>
+                    <div class="error-message" id="guests-error"></div>
+                </div>
+                <div class="inputBox">
+                    <span>Arrivals:</span>
+                    <input type="date" name="arrivals" id="arrivals" required>
+                    <div class="error-message" id="arrivals-error"></div>
+                </div>
+                <div class="inputBox">
+                    <span>Leaving:</span>
+                    <input type="date" name="leaving" id="leaving" required>
+                    <div class="error-message" id="leaving-error"></div>
+                </div>
+                <!-- New checkbox for student status -->
+                <div class="inputBox">
+                    <label>
+                        <input type="checkbox" id="student-checkbox">
+                        I'm a Presidency University student (50% off)
+                    </label>
+                </div>
+            </div>
+
+            <input type="submit" value="Submit" class="btn">
+        </form>
+
+        <!-- Success Message (Hidden by Default) -->
+        <div class="success-message hidden" id="success-message">
+            Booked successfully! Enjoy your trip!
+        </div>
+
+        <!-- User Details Display -->
+        <div id="user-details" class="user-details hidden">
+            <h2>Your Booking Details</h2>
+            <p><strong>Name:</strong> <span id="display-name"></span></p>
+            <p><strong>Email:</strong> <span id="display-email"></span></p>
+            <p><strong>Phone:</strong> <span id="display-phone"></span></p>
+            <p><strong>Address:</strong> <span id="display-address"></span></p>
+            <p><strong>Destination:</strong> <span id="display-location"></span></p>
+            <p><strong>Guests:</strong> <span id="display-guests"></span></p>
+            <p><strong>Arrivals:</strong> <span id="display-arrivals"></span></p>
+            <p><strong>Leaving:</strong> <span id="display-leaving"></span></p>
+            <p><strong>Discount:</strong> <span id="display-discount"></span></p>
+        </div>
+
+        <!-- Print Ticket Section -->
+        <div id="ticket" class="ticket hidden">
+            <h2>Booking Confirmation</h2>
+            <p><strong>Name:</strong> <span id="ticket-name"></span></p>
+            <p><strong>Email:</strong> <span id="ticket-email"></span></p>
+            <p><strong>Phone:</strong> <span id="ticket-phone"></span></p>
+            <p><strong>Destination:</strong> <span id="ticket-location"></span></p>
+            <p><strong>Guests:</strong> <span id="ticket-guests"></span></p>
+            <p><strong>Arrivals:</strong> <span id="ticket-arrivals"></span></p>
+            <p><strong>Leaving:</strong> <span id="ticket-leaving"></span></p>
+            <p><strong>Discount:</strong> <span id="ticket-discount"></span></p>
+            <button class="btn-print" onclick="printTicket()">Print Ticket</button>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <section class="footer">
+        <div class="box-container">
+            <div class="box">
+                <h3>Quick Links</h3>
+                <a href="home.html"> <i class="fas fa-angle-right"></i> Home</a>
+                <a href="about.html"> <i class="fas fa-angle-right"></i> About</a>
+                <a href="package.html"> <i class="fas fa-angle-right"></i> Package</a>
+                <a href="book.html"> <i class="fas fa-angle-right"></i> Book</a>
+                <a href="login.html"><i class="fas fa-angle-right"></i> Login</a>
+            </div>
+        </div>
+
+        <div class="credit"> created by <span>Muktha Dodmane , Rahul Paramagond , Dawood M Umarani, Vaibhav Vaghdale</span> | All rights reserved! </div>
+    </section>
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+    <!-- EmailJS Script (for confirmation email) -->
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+    <!-- Custom JS -->
+    <script>
+        // Initialize EmailJS
+        emailjs.init("user_your_user_id");
+
+        // Handle form submission
+        document.getElementById('booking-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Form fields
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const address = document.getElementById('address').value;
+            const location = document.getElementById('location').value;
+            const guests = document.getElementById('guests').value;
+            const arrivals = document.getElementById('arrivals').value;
+            const leaving = document.getElementById('leaving').value;
+            const isStudent = document.getElementById('student-checkbox').checked;  // Check if the student checkbox is selected
+
+            // Validation
+            let isValid = true;
+
+            // Clear previous errors
+            clearErrors();
+
+            // Validate phone number (10 digits)
+            if (!/^\d{10}$/.test(phone)) {
+                showError('phone-error', 'Phone number must be exactly 10 digits');
+                isValid = false;
+            }
+
+            // Validate number of guests
+            if (guests <= 0) {
+                showError('guests-error', 'Guests number must be positive');
+                isValid = false;
+            }
+
+            // Validate dates
+            if (new Date(arrivals) >= new Date(leaving)) {
+                showError('arrivals-error', 'Arrival date must be before leaving date');
+                isValid = false;
+            }
+
+            // Validate email
+            if (!validateEmail(email)) {
+                showError('email-error', 'Please enter a valid email address');
+                isValid = false;
+            }
+
+            // Proceed if form is valid
+            if (isValid) {
+                // Calculate the discount
+                const discount = isStudent ? '50% off' : 'No discount';
+
+                // Display user details
+                document.getElementById('display-name').textContent = name;
+                document.getElementById('display-email').textContent = email;
+                document.getElementById('display-phone').textContent = phone;
+                document.getElementById('display-address').textContent = address;
+                document.getElementById('display-location').textContent = location;
+                document.getElementById('display-guests').textContent = guests;
+                document.getElementById('display-arrivals').textContent = arrivals;
+                document.getElementById('display-leaving').textContent = leaving;
+                document.getElementById('display-discount').textContent = discount;
+
+                // Show success message and user details
+                document.getElementById('success-message').classList.remove('hidden');
+                document.getElementById('user-details').classList.remove('hidden');
+                document.getElementById('booking-form').classList.add('hidden');
+
+                // Show ticket and print button
+                document.getElementById('ticket-name').textContent = name;
+                document.getElementById('ticket-email').textContent = email;
+                document.getElementById('ticket-phone').textContent = phone;
+                document.getElementById('ticket-location').textContent = location;
+                document.getElementById('ticket-guests').textContent = guests;
+                document.getElementById('ticket-arrivals').textContent = arrivals;
+                document.getElementById('ticket-leaving').textContent = leaving;
+                document.getElementById('ticket-discount').textContent = discount;
+
+                document.getElementById('ticket').classList.remove('hidden');
+            }
+        });
+
+        // Show error message
+        function showError(id, message) {
+            document.getElementById(id).textContent = message;
+        }
+
+        // Clear error messages
+        function clearErrors() {
+            const errors = document.querySelectorAll('.error-message');
+            errors.forEach(error => error.textContent = '');
+        }
+
+        // Validate email
+        function validateEmail(email) {
+            const re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+            return re.test(email);
+        }
+
+        // Print ticket
+        function printTicket() {
+            const ticketContent = document.getElementById('ticket').innerHTML;
+            const printWindow = window.open('', '', 'height=600,width=800');
+            printWindow.document.write('<html><head><title>Booking Ticket</title></head><body>');
+            printWindow.document.write(ticketContent);
+            printWindow.document.write('</body></html>');
+            printWindow.document.close();
+            printWindow.print();
+        }
+    </script>
+</body>
+</html>

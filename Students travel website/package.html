@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>package</title>
+   <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+   <link rel="stylesheet" href="css/style.css">
+
+   <style>
+      /* Weather Widget Styling */
+      .weather-widget {
+         margin: 20px 0;
+         text-align: center;
+         padding: 10px;
+         background-color: #f1f1f1;
+         border-radius: 5px;
+      }
+      .weather-widget input {
+         padding: 10px;
+         width: 200px;
+         border: 1px solid #ccc;
+         border-radius: 5px;
+         margin-right: 10px;
+      }
+      .weather-widget button {
+         padding: 10px;
+         background-color: #4CAF50;
+         color: white;
+         border: none;
+         cursor: pointer;
+         border-radius: 5px;
+      }
+      .weather-widget button:hover {
+         background-color: #45a049;
+      }
+      .weather-widget .weather-info {
+         margin-top: 20px;
+         display: none;
+      }
+
+      /* Style for package rating */
+      .rating {
+         color: #FFD700;
+         margin-top: 10px;
+      }
+   </style>
+</head>
+<body>
+
+<section class="header">
+   <a href="home.html" class="logo">Students friendly Travel Website</a>
+   <nav class="navbar">
+      <a href="home.html">home</a>
+      <a href="about.html">about</a>
+      <a href="package.html">package</a>
+      <a href="book.html">book</a>
+      <a href="login.html">Login</a>
+   </nav>
+   <div id="menu-btn" class="fas fa-bars"></div>
+</section>
+
+<div class="heading" style="background:url(images/header-bg-2.png) no-repeat">
+   <h1>packages</h1>
+</div>
+
+<!-- Weather Widget -->
+<section class="weather-widget">
+   <input type="text" id="city-name" placeholder="Enter city name" spellcheck="false">
+   <button id="weather-btn">Check Weather</button>
+   <div class="weather-info">
+      <h3 id="weather-city"></h3>
+      <p>Temperature: <span id="weather-temp"></span>°C</p>
+      <p>Humidity: <span id="weather-humidity"></span>%</p>
+      <p>Wind Speed: <span id="weather-wind"></span> km/h</p>
+   </div>
+</section>
+
+<section class="packages">
+   <h1 class="heading-title">top destinations</h1>
+   <div class="box-container">
+
+      <div class="box">
+         <div class="image">
+            <img src="images/img-1.jpg" alt="">
+         </div>
+         <div class="content">
+            <h3>Historic Places</h3>
+            <p>Book now to visit historical places across India</p>
+            <p class="price">$799 per person</p>
+            <div class="rating">
+               <i class="fas fa-star"></i>
+               <i class="fas fa-star"></i>
+               <i class="fas fa-star"></i>
+               <i class="fas fa-star"></i>
+               <i class="fas fa-star-half-alt"></i> (4.5/5)
+            </div>
+            <a href="book.html" class="btn">book now</a>
+         </div>
+      </div>
+
+      <div class="box">
+         <div class="image">
+            <img src="images/img-2.jpg" alt="">
+         </div>
+         <div class="content">
+            <h3>Hilltops and Trekking</h3>
+            <p>Love Trekking?? Book now to experience trekking at one of the best spots across India.</p>
+            <p class="price">$599 per person</p>
+            <div class="rating">
+               <i class="fas fa-star"></i>
+               <i class="fas fa-star"></i>
+               <i class="fas fa-star"></i>
+               <i class="fas fa-star-half-alt"></i>
+               <i class="fas fa-star-half-alt"></i> (4.2/5)
+            </div>
+            <a href="book.html" class="btn">book now</a>
+         </div>
+      </div>
+
+      <div class="box">
+         <div class="image">
+            <img src="images/img-3.jpg" alt="">
+         </div>
+         <div class="content">
+            <h3>Mountains</h3>
+            <p>Be it capturing the picturesque mountain views or one with you in it, India has some of the best mountain places that are worth visiting. You might have to trek or hike for a while till you get there, but when you do, it’s totally worth it.</p>
+            <p class="price">$899 per person</p>
+            <div class="rating">
+               <i class="fas fa-star"></i>
+               <i class="fas fa-star"></i>
+               <i class="fas fa-star"></i>
+               <i class="fas fa-star"></i>
+               <i class="fas fa-star"></i> (5/5)
+            </div>
+            <a href="book.html" class="btn">book now</a>
+         </div>
+      </div>
+
+      <div class="box">
+         <div class="image">
+            <img src="images/img-10.jpg" alt="">
+         </div>
+         <div class="content">
+            <h3>Deserts</h3>
+            <p>People may often think of deserts as hot places; however, some deserts are quite cold. We have put together a list of some of the most incredible deserts in the world, proving that they can be diverse places.</p>
+            <p class="price">$699 per person</p>
+            <div class="rating">
+               <i class="fas fa-star"></i>
+               <i class="fas fa-star"></i>
+               <i class="fas fa-star-half-alt"></i>
+               <i class="fas fa-star-half-alt"></i>
+               <i class="fas fa-star"></i> (4.3/5)
+            </div>
+            <a href="book.html" class="btn">book now</a>
+         </div>
+      </div>
+
+      <div class="box">
+         <div class="image">
+            <img src="images/img-11.jpg" alt="">
+         </div>
+         <div class="content">
+            <h3>Rivers and Lakes</h3>
+            <p>Get ready for an amazing beach vacation at Goa. You can expect very hot weather with very high humidity levels. You can also enjoy the various adventure activities in Goa.</p>
+            <p class="price">$799 per person</p>
+            <div class="rating">
+               <i class="fas fa-star"></i>
+               <i class="fas fa-star"></i>
+               <i class="fas fa-star"></i>
+               <i class="fas fa-star-half-alt"></i>
+               <i class="fas fa-star-half-alt"></i> (4.4/5)
+            </div>
+            <a href="book.html" class="btn">book now</a>
+         </div>
+      </div>
+
+      <div class="box">
+         <div class="image">
+            <img src="images/img-12.jpg" alt="">
+         </div>
+         <div class="content">
+            <h3>Beaches</h3>
+            <p>Get ready for an amazing beach vacation at Goa. You can expect very hot weather with very high humidity levels. You can also enjoy the various adventure activities in Goa.</p>
+            <p class="price">$649 per person</p>
+            <div class="rating">
+               <i class="fas fa-star"></i>
+               <i class="fas fa-star"></i>
+               <i class="fas fa-star"></i>
+               <i class="fas fa-star"></i>
+               <i class="fas fa-star-half-alt"></i> (4.6/5)
+            </div>
+            <a href="book.html" class="btn">book now</a>
+         </div>
+      </div>
+
+   </div>
+
+   <div class="load-more"><span class="btn">load more</span></div>
+
+</section>
+
+<section class="footer">
+   <div class="box-container">
+      <div class="box">
+         <h3>quick links</h3>
+         <a href="home.html"> <i class="fas fa-angle-right"></i> home</a>
+         <a href="about.html"> <i class="fas fa-angle-right"></i> about</a>
+         <a href="package.html"> <i class="fas fa-angle-right"></i> package</a>
+         <a href="book.html"> <i class="fas fa-angle-right"></i> book</a>
+         <a href="login.html"><i class="fas fa-angle-right"></i>Login</a>
+      </div>
+   </div>
+
+   <div class="credit"> created by <span>Muktha Dodmane , Rahul Paramagond , Dawood M Umarani, Vaibhav Vaghdale | all rights reserved! </div>
+</section>
+
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+<script src="js/script.js"></script>
+
+<script>
+   const apiKey = "3770e1063a9358031a009581e50b0277"; 
+   const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
+
+   const weatherBtn = document.getElementById("weather-btn");
+   const cityNameInput = document.getElementById("city-name");
+
+   weatherBtn.addEventListener("click", async () => {
+      const city = cityNameInput.value.trim();
+      if (city) {
+         const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
+         const data = await response.json();
+
+         if (data.cod === 200) {
+            document.getElementById("weather-city").textContent = data.name;
+            document.getElementById("weather-temp").textContent = Math.round(data.main.temp);
+            document.getElementById("weather-humidity").textContent = data.main.humidity;
+            document.getElementById("weather-wind").textContent = data.wind.speed;
+            document.querySelector(".weather-info").style.display = "block";
+         } else {
+            alert("City not found. Please try again.");
+         }
+      } else {
+         alert("Please enter a city name.");
+      }
+   });
+</script>
+
+</body>
+</html>

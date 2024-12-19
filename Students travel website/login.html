@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Login - Travel</title>
+
+   <!-- Swiper CSS -->
+   <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+   <!-- Font Awesome Icons -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+   <!-- Custom Styles -->
+   <link rel="stylesheet" href="css/style.css">
+
+   <style>
+      /* Smooth transitions */
+      .login-container, .signup-container {
+         animation: fadeIn 1s ease-out;
+         max-width: 500px;
+         margin: 0 auto;
+         padding: 20px;
+         background-color: #fff;
+         border-radius: 8px;
+         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      @keyframes fadeIn {
+         0% { opacity: 0; }
+         100% { opacity: 1; }
+      }
+
+      /* Box for inputs */
+      .inputBox {
+         margin-bottom: 20px;
+         display: flex;
+         flex-direction: column;
+      }
+
+      .inputBox span {
+         font-size: 14px;
+         font-weight: bold;
+         color: #333;
+         margin-bottom: 5px;
+      }
+
+      .inputBox input {
+         padding: 12px;
+         border: 1px solid #ccc;
+         border-radius: 5px;
+         font-size: 16px;
+         width: 100%;
+         box-sizing: border-box;
+      }
+
+      .inputBox input:focus {
+         border-color: #4CAF50;
+         outline: none;
+      }
+
+      /* Submit button */
+      .btn {
+         background-color: #4CAF50;
+         color: white;
+         padding: 12px 20px;
+         border: none;
+         border-radius: 5px;
+         cursor: pointer;
+         font-size: 16px;
+         width: 100%;
+         box-sizing: border-box;
+      }
+
+      .btn:hover {
+         background-color: #45a049;
+      }
+
+      /* Error message styling */
+      .error-message {
+         color: red;
+         font-size: 14px;
+         margin-top: 10px;
+      }
+
+      /* Mobile responsive styles */
+      @media (max-width: 768px) {
+         .login-container, .signup-container {
+            width: 90%;
+         }
+
+         .inputBox input {
+            font-size: 16px;
+         }
+      }
+   </style>
+</head>
+<body>
+
+   <!-- Header Section -->
+   <section class="header">
+      <a href="home.html" class="logo">Students friendly Travel Website</a>
+      <nav class="navbar">
+         <a href="home.html">home</a>
+         <a href="about.html">about</a>
+         <a href="package.html">package</a>
+         <a href="book.html">book</a>
+         <a href="login.html">Login</a>
+      </nav>
+      <div id="menu-btn" class="fas fa-bars"></div>
+   </section>
+
+   <!-- Heading Section -->
+   <div class="heading" style="background:url(images/header-bg-3.png) no-repeat">
+      <h1>Login</h1>
+   </div>
+
+   <!-- Login Form Section -->
+   <section id="login-section" class="login-container">
+      <h2>Login to Your Account</h2>
+
+      <!-- Login Form -->
+      <form id="login-form">
+         <!-- Email Box -->
+         <div class="inputBox">
+            <span>Email:</span>
+            <input type="email" id="email" placeholder="Enter your email" required>
+         </div>
+
+         <!-- Password Box -->
+         <div class="inputBox">
+            <span>Password:</span>
+            <input type="password" id="password" placeholder="Enter your password" required>
+         </div>
+
+         <!-- Submit Button -->
+         <input type="submit" value="Login" class="btn">
+
+         <!-- Error Message -->
+         <div class="error-message" id="error-message" style="display: none;">
+            Invalid email or password. Please try again.
+         </div>
+      </form>
+
+      <!-- Registration Link -->
+      <p>Don't have an account? <a href="#" id="show-signup">Sign up here</a></p>
+   </section>
+
+   <!-- Sign Up Form Section -->
+   <section id="signup-section" class="signup-container" style="display: none;">
+      <h2>Create a New Account</h2>
+
+      <!-- Sign-Up Form -->
+      <form id="signup-form">
+         <!-- Name Box -->
+         <div class="inputBox">
+            <span>Name:</span>
+            <input type="text" id="signup-name" placeholder="Enter your full name" required>
+         </div>
+
+         <!-- Email Box -->
+         <div class="inputBox">
+            <span>Email:</span>
+            <input type="email" id="signup-email" placeholder="Enter your email" required>
+         </div>
+
+         <!-- Password Box -->
+         <div class="inputBox">
+            <span>Password:</span>
+            <input type="password" id="signup-password" placeholder="Enter your password" required>
+         </div>
+
+         <!-- Submit Button -->
+         <input type="submit" value="Sign Up" class="btn">
+
+         <!-- Error Message -->
+         <div class="error-message" id="signup-error-message" style="display: none;">
+            Error during sign-up. Please try again.
+         </div>
+      </form>
+
+      <!-- Switch to Login -->
+      <p>Already have an account? <a href="#" id="show-login">Login here</a></p>
+   </section>
+
+   <!-- Footer Section -->
+   <section class="footer">
+      <div class="box-container">
+         <div class="box">
+            <h3>Quick Links</h3>
+            <a href="home.html"> <i class="fas fa-angle-right"></i> Home</a>
+            <a href="about.html"> <i class="fas fa-angle-right"></i> About</a>
+            <a href="package.html"> <i class="fas fa-angle-right"></i> Package</a>
+            <a href="book.html"> <i class="fas fa-angle-right"></i> Book</a>
+            <a href="login.html"><i class="fas fa-angle-right"></i> Login</a>
+         </div>
+      </div>
+
+      <div class="credit"> created by <span>Muktha Dodmane , Rahul Paramagond , Dawood M Umarani, Vaibhav Vaghdale</span> | All rights reserved! </div>
+   </section>
+
+   <!-- Swiper JS -->
+   <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+   <!-- Custom JS -->
+   <script src="js/script.js"></script>
+
+   <!-- Login and Sign-Up Form Validation -->
+   <script>
+      // Show Sign-Up form when clicking "Sign up here"
+      document.getElementById('show-signup').addEventListener('click', function() {
+         document.getElementById('login-section').style.display = 'none';
+         document.getElementById('signup-section').style.display = 'block';
+      });
+
+      // Show Login form when clicking "Login here"
+      document.getElementById('show-login').addEventListener('click', function() {
+         document.getElementById('signup-section').style.display = 'none';
+         document.getElementById('login-section').style.display = 'block';
+      });
+
+      // Handle Login Form Submission
+      document.getElementById('login-form').addEventListener('submit', function(event) {
+         event.preventDefault();
+
+         // Get form input values
+         var email = document.getElementById('email').value;
+         var password = document.getElementById('password').value;
+
+         // Basic validation (replace with actual logic)
+         var validEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/.test(email);
+         var validPassword = password.length >= 6;
+
+         if (validEmail && validPassword) {
+            alert('Login successful!');
+            window.location.href = 'home.html'; // Redirect after login
+         } else {
+            document.getElementById('error-message').style.display = 'block';
+         }
+      });
+
+      // Handle Sign-Up Form Submission
+      document.getElementById('signup-form').addEventListener('submit', function(event) {
+         event.preventDefault();
+
+         // Get form input values
+         var name = document.getElementById('signup-name').value;
+         var email = document.getElementById('signup-email').value;
+         var password = document.getElementById('signup-password').value;
+
+         // Basic validation (replace with actual logic)
+         var validEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/.test(email);
+         var validPassword = password.length >= 6;
+         var validName = name.length >= 3;
+
+         if (validName && validEmail && validPassword) {
+            alert('Sign-Up successful!');
+            window.location.href = 'home.html'; // Redirect after sign-up
+         } else {
+            document.getElementById('signup-error-message').style.display = 'block';
+         }
+      });
+   </script>
+
+</body>
+</html>
